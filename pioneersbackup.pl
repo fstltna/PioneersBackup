@@ -1,8 +1,7 @@
 #!/usr/bin/perl
 
 # Set these for your situation
-my $PIONEERSDIR = "/sbbs";
-my $OTHERPIONEERDIR = "";
+my $PIONEERSDIR = "/root/OurPioneers /usr/games/pioneers /usr/share/games/pioneers /usr/share/doc/pioneers /usr/share/gnome/help/pioneers /usr/share/pixmaps/pioneers";
 my $BACKUPDIR = "/root/backups";
 my $TARCMD = "/bin/tar czf";
 my $VERSION = "1.0";
@@ -111,7 +110,7 @@ if (-f "$BACKUPDIR/pioneersbackup-1.tgz")
 	rename("$BACKUPDIR/pioneersbackup-1.tgz", "$BACKUPDIR/pioneersbackup-2.tgz");
 }
 print "Done\nCreating Backup: ";
-system("$TARCMD $BACKUPDIR/pioneersbackup-1.tgz $PIONEERSDIR $OTHERPIONEERDIR");
+system("$TARCMD $BACKUPDIR/pioneersbackup-1.tgz $PIONEERSDIR");
 if ($BACKUPSERVER ne "")
 {
 	print "Offsite backup requested\n";
